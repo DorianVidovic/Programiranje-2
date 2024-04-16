@@ -5,6 +5,8 @@
 	    ispisuje na ekran.
 */	  
 
+// Dorian Vidović 2273
+
 #include <stdio.h>
 #include <string.h>
 

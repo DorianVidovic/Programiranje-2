@@ -6,6 +6,8 @@
 		slovom, ne vodeći računa o razlici velikih i malih slova, sortirane silazno po abecedi.
 */
 
+// Dorian Vidović 2273
+
 #include <stdio.h>
 #include <string.h>
 
