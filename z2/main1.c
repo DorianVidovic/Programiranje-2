@@ -17,16 +17,19 @@ struct kompleksanBr
 	float imaginarni;	
 };
 
-void unos(struct kompleksanBr br){
+struct kompleksanBr unos(){
+	struct kompleksanBr br;
 
 	printf("Unesi realni dio kompleksnog broja: ");
-	scanf("%f\n", &br.realni);
+	scanf("%f", &br.realni);
 	printf("Unesi imaginarni dio kompleksnog broja: ");
-	scanf("%f i\n", &br.imaginarni);
+	scanf("%f", &br.imaginarni);
+
+	return br;
 }
 
-void ispis(struct kompleksanBr br){
-	printf("%.2f + %.2fi", br.realni, br.imaginarni);
+void ispis(char poruka[], struct kompleksanBr br){
+	printf("%s - %.2f + %.2fi\n", poruka, br.realni, br.imaginarni);
 }
 
 struct kompleksanBr zbroj(struct kompleksanBr a, struct kompleksanBr b){
@@ -81,19 +84,24 @@ struct kompleksanBr kolicnik(struct kompleksanBr a, struct kompleksanBr b) {
 
 int main()
 {
-	struct kompleksanBr a, b, rez;
+	struct kompleksanBr a, b, rez, z, d;
 
-	unos(a);
-	unos(b);
+	a = unos();
+	b = unos();
+	/**/
+	ispis("\n a- ",a);
+	ispis("\n b- ",b);
 
 	rez = zbroj(a, b);
-	ispis(rez);
+	ispis("\nzbroj",rez);
 	rez = razlika(a, b);
-	ispis(rez);
+	ispis("razlika",rez);
 	rez = umnozak(a, b);
-	ispis(rez);
+	ispis("umnozak",rez);
 	rez = kolicnik(a, b);
-	ispis(rez);
+	ispis("kolicnik",rez);
+
+	a = unos();
 	
 	return 0;
 }
